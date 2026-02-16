@@ -1,0 +1,23 @@
+---
+- name: Create app directory for nginx website
+  ansible.builtin.file:
+    path: /opt/nginx-website
+    state: directory
+    mode: "0755"
+
+- name: Copy docker-compose.yaml
+  ansible.builtin.copy:
+    src: docker-compose.yaml
+    dest: /opt/nginx-website/docker-compose.yaml
+    mode: "0644"
+
+- name: Copy index.html
+  ansible.builtin.copy:
+    src: index.html
+    dest: /opt/nginx-website/index.html
+    mode: "0644"
+
+- name: Start nginx website via docker compose
+  ansible.builtin.command:
+    cmd: docker compose up -d
+    chdir: /opt/nginx-website

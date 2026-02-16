@@ -1,0 +1,9 @@
+---
+- name: Practical exam - install docker and run nginx website
+  hosts: localhost
+  connection: local
+  become: true
+
+  roles:
+    - install_docker
+    - run_nginx_website
