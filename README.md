@@ -15,11 +15,14 @@ Ansible-based automation project for the practical exam.
 
 ## How to run locally
 
+```bash
 sudo apt update
 sudo apt install -y ansible
 sudo ansible-playbook -i inventory.ini playbook.yaml
-
+```
 ## Verify
 
+```bash
 curl http://localhost
 sudo docker ps
+```
