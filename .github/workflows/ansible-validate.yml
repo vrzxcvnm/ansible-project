@@ -30,3 +30,7 @@ jobs:
       - name: Playbook syntax check
         run: |
           ansible-playbook -i localhost, -c local playbook.yaml --syntax-check
+
+      - name: Starting Playbook
+        run: |
+          ansible-playbook -i localhost, -c local playbook.yaml
