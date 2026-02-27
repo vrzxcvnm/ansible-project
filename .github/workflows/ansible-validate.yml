@@ -34,3 +34,7 @@ jobs:
       - name: Starting Playbook
         run: |
           ansible-playbook -i localhost, -c local playbook.yaml
+
+      - name: Display webpage 
+        run: | 
+          curl localhost 
